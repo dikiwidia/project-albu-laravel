@@ -1,0 +1,32 @@
+{
+    "$schema": "https://json.schemastore.org/prettierrc",
+    "printWidth": 120,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "plugins": ["@prettier/plugin-php", "@shufo/prettier-plugin-blade", "prettier-plugin-tailwindcss"],
+    "tailwindStylesheet": "./resources/css/app.css",
+    "overrides": [
+        {
+            "files": "*.blade.php",
+            "options": {
+                "parser": "blade",
+                "sortTailwindcssClasses": true,
+                "sortHtmlAttributes": "none"
+            }
+        },
+        {
+            "files": "*.php",
+            "excludeFiles": "*.blade.php",
+            "options": {
+                "parser": "php",
+                "phpVersion": "8.4"
+            }
+        },
+        {
+            "files": ["*.yml", "*.yaml"],
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
+}
